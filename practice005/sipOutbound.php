@@ -8,8 +8,8 @@ header("content-type: text/xml");
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
 // Your Account Sid and Auth Token from twilio.com/user/account
-$accountSid = 'ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-$authToken  = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+$sid = 'ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+$token  = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 $client = new Client($sid, $token);
 
 //発信元番号を指定。（購入したTwilio050番号）
