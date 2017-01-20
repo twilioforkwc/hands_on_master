@@ -12,7 +12,7 @@ $accountSid = 'ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 $authToken  = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 $client = new Client($sid, $token);
 
-//発信元はSIP端末のみなので、SIPドメインの指定を行う。
+//発信元番号を指定。（購入したTwilio050番号）
 $fromNumber = "+81 yourTwilionumber";
 //宛先から番号を抽出する。
 $toNumber = $_REQUEST['To'];
