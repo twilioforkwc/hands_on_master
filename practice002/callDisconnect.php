@@ -1,16 +1,17 @@
 #!/usr/local/bin/php-cgi-7.0
 <?php
-require_once('../twilio-php/Services/Twilio.php');
+require_once '../vendor/autoload.php';
+use Twilio\Rest\Client;
 
-# Todo: Replace XXX... to your AccountSID and token
 $sid = "ACXXXXXXXXXXXX";
 $token = "XXXXXXXXXXXXXXX";
-$client = new Services_Twilio($sid, $token);
-
-
+$client = new Client($sid, $token);
+$callSid = $argv[1];
 sleep(10);
 
-$callSid = $argv[1];
-$call = $client->account->calls->get($callSid);
-$call->hangup();
+$call = $client
+    ->calls($callSid)
+    ->update(
+        array("status" => "completed")
+    );
 ?>
